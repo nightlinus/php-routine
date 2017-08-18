@@ -13,6 +13,7 @@ namespace nightlinus\PhpRoutines;
 
 use nightlinus\PhpRoutines\Strategy\Fork;
 use nightlinus\PhpRoutines\Strategy\Strategy;
+use function cli_set_process_title;
 
 final class PhpRoutines
 {

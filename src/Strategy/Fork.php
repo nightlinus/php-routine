@@ -15,6 +15,13 @@ use nightlinus\PhpRoutines\Routine;
 use nightlinus\PhpRoutines\Worker\Id;
 use nightlinus\PhpRoutines\Worker\Pid;
 use nightlinus\PhpRoutines\Worker\Status;
+use function cli_set_process_title;
+use function pcntl_errno;
+use function pcntl_fork;
+use function pcntl_strerror;
+use function pcntl_waitpid;
+use function pcntl_wexitstatus;
+use function pcntl_wifexited;
 
 final class Fork implements Strategy
 {
