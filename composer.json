@@ -1,0 +1,27 @@
+{
+  "name": "nightlinus/php-routine",
+  "description": "Library for running tasks in separate process or thread",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "nightlinus\\PhpRoutines\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "nightlinus\\PhpRoutines\\tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "nightlinus",
+      "email": "m.a.ogarkov@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}
