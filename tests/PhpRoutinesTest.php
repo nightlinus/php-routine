@@ -72,5 +72,13 @@ class PhpRoutinesTest extends TestCase
             "Routines should run in parallel, max expected duration is $expectedDuration, actual duration is $elapsed"
         );
     }
+
+    public function it can set title on master process()
+    {
+        $sut = PhpRoutines::forks();
+        $actual = $sut->named('test');
+
+        $this->assertInstanceOf(PhpRoutines::class, $actual);
+    }
 }
 

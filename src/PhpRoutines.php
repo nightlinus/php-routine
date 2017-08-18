@@ -61,4 +61,13 @@ final class PhpRoutines
             $this->strategy->waitWorker($id);
         }
     }
+
+    public function titled(string $title): self
+    {
+        if ($title) {
+            cli_set_process_title($title);
+        }
+
+        return $this;
+    }
 }

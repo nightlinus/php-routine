@@ -35,12 +35,14 @@ final class Fork implements Strategy
             return Pid::fromInt($pid);
         }
 
+        $this->setTitle($routine->name());
+
         //when in child run routine and exit
         try {
             $routine->run();
             exit(0);
         } catch (\Throwable $e) {
-            exit($e->getMessage());
+            exit($e->getMessage() . PHP_EOL);
         }
     }
 
@@ -56,5 +58,12 @@ final class Fork implements Strategy
         }
 
         return Status::error(pcntl_wexitstatus($status));
+    }
+
+    private function setTitle(string $title): void
+    {
+        if ($title) {
+            cli_set_process_title($title);
+        }
     }
 }
